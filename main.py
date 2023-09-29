@@ -11,16 +11,16 @@ import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import firestore
 
-import os
+#import os
 
 # Obtén la ruta del archivo de credenciales desde la variable de entorno
-cred_path = os.environ.get("FIREBASE_CREDENTIALS")
+#cred_path = os.environ.get("FIREBASE_CREDENTIALS")
 
 # Inicializa Firebase Admin SDK con las credenciales
-cred = credentials.Certificate(cred_path)
+#cred = credentials.Certificate(cred_path)
 # Obtiene una referencia a la colección "Top" en Firestore
-db = firestore.client()
-top_collection = db.collection('Top')
+#db = firestore.client()
+#top_collection = db.collection('Top')
 # Diccionario para almacenar los objetos de audio
 
 def reiniciar_variables_globales():
@@ -226,12 +226,12 @@ def main(page: ft.Page):
         # Obtener el valor ingresado por el usuario
         #nombre = nombre_textfield.value
         
-        tabla = ft.View("/tabla", [ft.Text("Ingrese su nombre"), nombre_textfield, ft.ElevatedButton("ir a Top", on_click=lambda _: vista_top(nombre_textfield.value))],horizontal_alignment=ft.MainAxisAlignment.CENTER,vertical_alignment=ft.MainAxisAlignment.CENTER)
+        tabla = ft.View("/tabla", [ft.Text("Ingrese su nombre"), nombre_textfield, ft.ElevatedButton("Seguir", on_click=lambda _: vista_publicidad())],horizontal_alignment=ft.MainAxisAlignment.CENTER,vertical_alignment=ft.MainAxisAlignment.CENTER)
         
         
         page.views.append(tabla)
         page.update()
-        
+        '''
     def vista_top(nom):
         global nombre, mipj
         nombre = nom
@@ -296,7 +296,7 @@ def main(page: ft.Page):
 
 
 
-        
+        '''
 
     # Vista publicidad
     def vista_publicidad():

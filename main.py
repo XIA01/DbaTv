@@ -11,9 +11,13 @@ import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import firestore
 
-# Inicializa Firebase Admin SDK con tus credenciales
-cred = credentials.Certificate('dbat-13cc2-firebase-adminsdk-gghku-fb753c9189.json')
-firebase_admin.initialize_app(cred)
+import os
+
+# Obtén la ruta del archivo de credenciales desde la variable de entorno
+cred_path = os.environ.get("FIREBASE_CREDENTIALS")
+
+# Inicializa Firebase Admin SDK con las credenciales
+cred = credentials.Certificate(cred_path)
 # Obtiene una referencia a la colección "Top" en Firestore
 db = firestore.client()
 top_collection = db.collection('Top')

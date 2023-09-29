@@ -33,7 +33,7 @@ typing_extensions==4.7.1
 watchdog==3.0.0
 wcwidth==0.2.6
 websockets==11.0.3
-websocket-client==0.59.0
+websocket-client==1.5.2
 anyio==3.0.1
 copier==8.1.0
 questionary==1.10.0
